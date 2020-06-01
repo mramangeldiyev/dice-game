@@ -18,20 +18,27 @@ void main() {
 class DiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) { 
+    var firstDiceNumber = 1;
     return Center(
       child: Row(
         children: <Widget>[
           Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(5.0),
-              child: Image.asset('images/dice1.png'),
+            //padding: const EdgeInsets.all(5.0),
+            child: FlatButton(
+              child: Image.asset('images/dice$firstDiceNumber.png'),
+              onPressed: () {
+                print('object1');
+              },
             ),
           ),
           Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(5.0),
-              child: Image.asset('images/dice1.png'),
-            )
+            //padding: const EdgeInsets.all(5.0),
+            child: FlatButton(
+              child: Image.asset('images/dice2.png'),
+              onPressed: () {
+                print('object2');
+              },
+            ),
           ),
         ],
       ),
