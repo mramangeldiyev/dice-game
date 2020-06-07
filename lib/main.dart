@@ -23,6 +23,12 @@ class DiceScreen extends StatefulWidget {
 class _DiceScreenState extends State<DiceScreen> {
   int firstDiceNumber = 1;
   int secondDiceNumber = 1;
+
+  void _randomiseDice() {
+    firstDiceNumber = Random().nextInt(6) + 1;
+    secondDiceNumber = Random().nextInt(6) + 1;
+  }
+
   @override
   Widget build(BuildContext context) { 
     return Center(
@@ -34,7 +40,7 @@ class _DiceScreenState extends State<DiceScreen> {
               child: Image.asset('images/dice$firstDiceNumber.png'),
               onPressed: () {
                 setState(() {
-                  firstDiceNumber = Random().nextInt(6) + 1;
+                  _randomiseDice();
                 });
               },
             ),
@@ -45,7 +51,7 @@ class _DiceScreenState extends State<DiceScreen> {
               child: Image.asset('images/dice$secondDiceNumber.png'),
               onPressed: () {
                 setState(() {
-                  secondDiceNumber = Random().nextInt(6) + 1;
+                  _randomiseDice();
                 });
               },
             ),
